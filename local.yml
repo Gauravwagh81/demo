@@ -1,0 +1,17 @@
+version: '2'
+
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - USE_DOCKER=yes
+    ports:
+      - "8000:8000"
+    command: /start.sh
+
+
